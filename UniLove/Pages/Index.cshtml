@@ -1,0 +1,108 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "UniLove";
+}
+
+<div class="login-container">
+    <h1 class="logo">Uni<span>Love</span></h1>
+    <p>Swipea para amor, amistad o el mejor tutor!</p>
+    <form>
+        <input type="text" class="form-control input-width" placeholder="Usuario" required>
+        <input type="password" class="form-control input-width" placeholder="Contraseña" required>
+        <div class="button-container">
+            <button type="button" class="btn btn-create-account">Crear cuenta</button>
+            <button type="submit" class="btn btn-login">Ingresar</button>
+        </div>
+    </form>
+</div>
+
+<style>
+    body {
+        background-color: #FF007F;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+
+    .login-container {
+        text-align: center;
+        color: white;
+    }
+
+    .login-container h1 {
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+    .login-container p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+
+    .form-control {
+        background-color: #f0f0f0;
+        border: none;
+        border-radius: 30px;
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .input-width {
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+    .form-control:not(:last-child) {
+        margin-bottom: 30px;
+    }
+
+    .btn-login {
+        background-color: #FF4DA6;
+        border: none;
+        border-radius: 30px;
+        padding: 10px 40px;
+        color: white;
+        font-size: 1.1rem;
+    }
+
+    .btn-login:hover {
+        background-color: #e60073;
+    }
+
+    .btn-create-account {
+        background-color: transparent;
+        color: white;
+        text-decoration: underline;
+        border: none;
+        margin-bottom: 20px;
+    }
+
+    .btn-create-account:hover {
+        color: #f0f0f0;
+    }
+
+    .logo {
+        font-weight: bold;
+        font-size: 2.5rem;
+    }
+
+    .logo span {
+        color: #ccc;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+    .button-container button {
+        width: 48%; /* Para que ambos botones ocupen un ancho similar */
+    }
+</style>
+
