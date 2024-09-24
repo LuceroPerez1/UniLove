@@ -7,15 +7,48 @@
 <div class="login-container">
     <h1 class="logo">Uni<span>Love</span></h1>
     <p>Swipea para amor, amistad o el mejor tutor!</p>
-    <form>
+    <form id="loginForm">
         <input type="text" class="form-control input-width" placeholder="Usuario" required>
-        <input type="password" class="form-control input-width" placeholder="Contraseña" required>
+        <input type="password" class="form-control input-width mt-3" placeholder="Contraseña" required>
         <div class="button-container">
-            <button type="button" class="btn btn-create-account">Crear cuenta</button>
-            <button type="submit" class="btn btn-login">Ingresar</button>
+            <!-- Botón para mostrar el cuadro de privacidad -->
+            <button type="button" class="btn btn-create-account mt-4" data-bs-toggle="modal" data-bs-target="#privacyModal">Crear cuenta</button>
+            <!-- Botón para enviar el formulario -->
+            <button type="submit" class="btn btn-login mt-4">Ingresar</button>
         </div>
     </form>
 </div>
+
+<!-- Modal de Aviso de Privacidad -->
+<div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="privacyModalLabel">Política de Seguridad</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Mantener una conversación respetuosa:</strong> Los usuarios deben interactuar de manera cordial y respetuosa. Está prohibido cualquier tipo de lenguaje ofensivo, acosador o discriminatorio.</p>
+                <p><strong>Proteger la privacidad personal:</strong> Los usuarios deben evitar compartir información personal sensible como direcciones, números de teléfono o datos bancarios en chats públicos o privados.</p>
+                <p><strong>Reportar conductas inapropiadas:</strong> Cualquier comportamiento sospechoso o inadecuado debe ser reportado a los administradores de la plataforma.</p>
+                <p><strong>No compartir contraseñas:</strong> Los usuarios deben mantener la seguridad de sus cuentas evitando compartir contraseñas.</p>
+                <p><strong>Respetar el consentimiento:</strong> En todo momento, los usuarios deben respetar los límites establecidos por otros usuarios.</p>
+                <p><strong>Evitar la difusión de contenido inapropiado:</strong> No se permite compartir imágenes o mensajes con contenido explícito o ofensivo.</p>
+            </div>
+            <div class="modal-footer">
+                <!-- Botón para cerrar el modal y redirigir a la página de creación de cuenta -->
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="redirectToCreateAccount()">Entendido</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Función para redirigir a la página de creación de cuenta
+    function redirectToCreateAccount() {
+        window.location.href = '/CreateAccount'; // Redirige a la página de creación de cuenta
+    }
+</script>
 
 <style>
     body {
@@ -32,15 +65,15 @@
         color: white;
     }
 
-    .login-container h1 {
-        font-size: 3rem;
-        font-weight: bold;
-    }
+        .login-container h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
 
-    .login-container p {
-        font-size: 1.2rem;
-        margin-bottom: 30px;
-    }
+        .login-container p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
 
     .form-control {
         background-color: #f0f0f0;
@@ -56,10 +89,6 @@
         margin: 0 auto;
     }
 
-    .form-control:not(:last-child) {
-        margin-bottom: 30px;
-    }
-
     .btn-login {
         background-color: #FF4DA6;
         border: none;
@@ -69,9 +98,9 @@
         font-size: 1.1rem;
     }
 
-    .btn-login:hover {
-        background-color: #e60073;
-    }
+        .btn-login:hover {
+            background-color: #e60073;
+        }
 
     .btn-create-account {
         background-color: transparent;
@@ -81,18 +110,18 @@
         margin-bottom: 20px;
     }
 
-    .btn-create-account:hover {
-        color: #f0f0f0;
-    }
+        .btn-create-account:hover {
+            color: #f0f0f0;
+        }
 
     .logo {
         font-weight: bold;
         font-size: 2.5rem;
     }
 
-    .logo span {
-        color: #ccc;
-    }
+        .logo span {
+            color: #ccc;
+        }
 
     .button-container {
         display: flex;
@@ -101,8 +130,7 @@
         margin: 0 auto;
     }
 
-    .button-container button {
-        width: 48%; /* Para que ambos botones ocupen un ancho similar */
-    }
+        .button-container button {
+            width: 48%;
+        }
 </style>
-
