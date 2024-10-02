@@ -3,4 +3,285 @@
 @{
 }
 
-<h1>Hola</h1>
+<div class="main-container">
+    <h1 class="logo">Uni<span>Love</span></h1>
+</div>
+<div class="modoAmigos">
+    <form class="form" onsubmit="return validateForm()">
+        <div class="form-group left">
+            <p>Ingresa tu correo</p>
+            <input type="email" placeholder="Correo electrónico" required>
+
+            <p>Ingresa tu usuario</p>
+            <input type="text" placeholder="Usuario" required>
+
+            <p>Ingresa tu fecha de nacimiento</p>
+            <input type="date" placeholder="Fecha de nacimiento" required>
+
+            <p>¿Cuál es tu orientación sexual?</p>
+            <select required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="heterosexual">Heterosexual</option>
+                <option value="homosexualLesbiana">Homosexual (Lesbiana)</option>
+                <option value="homosexualGay">Homosexual (Gay)</option>
+                <option value="bisexual">Bisexual</option>
+                <option value="pansexual">Pansexual</option>
+                <option value="asexual">Asexual</option>
+                <option value="demisexual">Demisexual</option>
+                <option value="queer">Queer</option>
+                <option value="fluidSexuality">Fluid Sexuality</option>
+                <option value="interseccionalidad">Interseccionalidad</option>
+            </select>
+
+            <p>¿Qué deseas buscar?</p>
+            <select required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="hombres">Hombres</option>
+                <option value="mujeres">Mujeres</option>
+                <option value="ambos">Ambos</option>
+            </select>
+
+            <p>¿Cuál es tu género?</p>
+            <select required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="cisgenero">Cisgénero</option>
+                <option value="transgenero">Transgénero</option>
+                <option value="noBinario">No binario</option>
+                <option value="generoFluido">Género fluido</option>
+                <option value="agenero">Agénero</option>
+                <option value="bigenero">Bigénero</option>
+                <option value="demigenero">Demigénero</option>
+                <option value="intersex">Intersex</option>
+            </select>
+
+            <p>Selecciona una facultad de la UANL</p>
+            <select required>
+                <option value="" disabled selected>Seleccione</option>
+
+                <optgroup label="Ciencias Sociales y Humanidades">
+                    <option value="facdyc">Facultad de Derecho y Criminología (FACDYC)</option>
+                    <option value="ffyl">Facultad de Filosofía y Letras (FFYL)</option>
+                    <option value="facpsi">Facultad de Psicología (FACPSI)</option>
+                    <option value="fcpyri">Facultad de Ciencias Políticas y Relaciones Internacionales (FCPyRI)</option>
+                </optgroup>
+
+                <optgroup label="Ciencias Económico-Administrativas">
+                    <option value="facpya">Facultad de Contaduría Pública y Administración (FACPYA)</option>
+                    <option value="fime">Facultad de Economía (FIME)</option>
+                </optgroup>
+
+                <optgroup label="Ciencias Exactas y Naturales">
+                    <option value="fic">Facultad de Ingeniería Civil (FIC)</option>
+                    <option value="fcb">Facultad de Ciencias Biológicas (FCB)</option>
+                </optgroup>
+
+                <optgroup label="Ciencias de la Salud">
+                    <option value="facmed">Facultad de Medicina (FACMED)</option>
+                    <option value="facdent">Facultad de Odontología (FACDENT)</option>
+                </optgroup>
+
+                <optgroup label="Cultura Física">
+                    <option value="facdep">Facultad de Organización Deportiva (FOD)</option>
+                </optgroup>
+
+                <optgroup label="Otra">
+                    <option value="otra">Otra</option>
+                </optgroup>
+            </select>
+        </div>
+        <div class="form-group right">
+            <p>¿Cómo describirías a tu mejor amigo?</p>
+            <select required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="leal">Leal y de confianza</option>
+                <option value="divertido">Divertido/a y siempre animado/a</option>
+                <option value="compasivo">Compasivo/a y comprensivo/a</option>
+                <option value="aventurero">Aventurero/a y espontáneo/a</option>
+                <option value="sabio">Sabio/a y siempre da buenos consejos</option>
+                <option value="todasAnteriores">Todas las anteriores</option>
+            </select>
+
+            <p>¿Qué actividad te gusta hacer con tus amigos en tu tiempo libre?</p>
+            <select required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="salirCenar">Salir a cenar o tomar algo</option>
+                <option value="verPeliculas">Ver películas o series</option>
+                <option value="deportes">Hacer deportes o actividades al aire libre</option>
+                <option value="jugarJuegosMesa">Jugar juegos de mesa o videojuegos</option>
+                <option value="simplementeHablar">Simplemente pasar tiempo conversando</option>
+            </select>
+
+            <p>¿Cuál es tu plan ideal para una noche con amigos?</p>
+            <select required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="salirFiesta">Salir de fiesta</option>
+                <option value="nocheJuegos">Noche de juegos en casa</option>
+                <option value="cenaAfuera">Cena en un restaurante</option>
+                <option value="verPeliculaCasa">Ver una película en casa</option>
+                <option value="actividadesAlAireLibre">Realizar actividades al aire libre</option>
+            </select>
+
+            <p>¿Qué tipo de humor disfrutas más entre amigos?</p>
+            <select required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="sarcastico">Humor sarcástico</option>
+                <option value="tonto">Humor tonto e inocente</option>
+                <option value="inteligente">Humor inteligente</option>
+                <option value="negro">Humor negro</option>
+                <option value="situacional">Humor situacional</option>
+            </select>
+
+            <p>¿Cuál es tu forma favorita de apoyar a un amigo en tiempos difíciles?</p>
+            <select required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="escuchar">Escuchar y estar presente</option>
+                <option value="darConsejo">Ofrecer consejos y soluciones</option>
+                <option value="hacerAlgoJuntos">Hacer algo juntos para distraerlo/a</option>
+                <option value="darEspacio">Darle espacio y tiempo para que reflexione</option>
+            </select>
+
+            <p>¿Qué es lo que más valoras en una amistad?</p>
+            <select required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="confianza">Confianza</option>
+                <option value="honestidad">Honestidad</option>
+                <option value="apoyo">Apoyo incondicional</option>
+                <option value="diversion">Diversión y compañía</option>
+                <option value="lealtad">Lealtad</option>
+            </select>
+
+            <p>¿Prefieres tener un grupo grande de amigos o pocos amigos cercanos?</p>
+            <select required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="grupoGrande">Grupo grande de amigos</option>
+                <option value="pocosCercanos">Pocos amigos cercanos</option>
+                <option value="equilibrioAmbos">Un equilibrio entre ambos</option>
+            </select>
+
+            <p>¿Cuál es el mejor recuerdo que tienes con un amigo?</p>
+            <select required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="viajeJuntos">Un viaje que hicimos juntos</option>
+                <option value="celebracionEspecial">Una celebración especial</option>
+                <option value="momentoSuperacion">Un momento en que superamos algo juntos</option>
+                <option value="simpleConversacion">Una simple conversación que nunca olvidaré</option>
+                <option value="actividadDivertida">Una actividad divertida que compartimos</option>
+            </select>
+
+            <p>¿Qué harías si tu amigo se equivocara en algo importante?</p>
+            <select required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="confrontarlo">Confrontarlo de manera directa</option>
+                <option value="hablarloConCuidado">Hablarlo con cuidado y comprensión</option>
+                <option value="dejarQueLoNote">Dejar que lo note por sí mismo</option>
+                <option value="apoyarlo">Apoyarlo y ayudarlo a corregir el error</option>
+            </select>
+
+            <p>¿Qué cualidades crees que son esenciales para una amistad duradera?</p>
+            <select required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="confianza">Confianza mutua</option>
+                <option value="comunicacion">Comunicación honesta</option>
+                <option value="apoyoEmocional">Apoyo emocional constante</option>
+                <option value="respetoMutuo">Respeto mutuo</option>
+                <option value="lealtad">Lealtad incondicional</option>
+            </select>
+        </div>
+        <div class="submit-container">
+            <button type="submit" class="enviar-button">Enviar</button>
+        </div>
+    </form>
+</div>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f8f8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    .main-container {
+        text-align: center;
+        border-radius: 15px;
+        padding: 20px;
+    }
+
+    .logo {
+        font-size: 3rem;
+        color: #FF007F;
+    }
+
+        .logo span {
+            color: #a8005b;
+        }
+
+    .container {
+        text-align: center;
+        background-color: #fff;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 80%;
+        height: 90vh;
+        overflow-y: auto;
+    }
+
+    .form {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        flex-wrap: wrap;
+    }
+
+    .form-group {
+        width: 48%;
+        margin-bottom: 15px;
+    }
+
+    .form-group.left,
+    .form-group.right {
+        text-align: left;
+    }
+
+    .form-group input,
+    .form-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+        height: 50px;
+    }
+
+    .form-group p {
+        margin: 0;
+    }
+
+    .submit-container {
+        text-align: center;
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .enviar-button {
+        padding: 10px 20px;
+        background-color: #FF007F;
+        color: #fff;
+        border: none;
+        border-radius: 30px;
+        font-size: 1rem;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s;
+    }
+
+    .enviar-button:hover {
+        background-color: #e6006f;
+    }
+</style>

@@ -2,3 +2,284 @@
 @model UniLove.Pages.CrearCuentaModoTutorModel
 @{
 }
+
+<div class="main-container">
+    <h1 class="logo">Uni<span>Love</span></h1>
+</div>
+<div class="modoTutor">
+    <form class="form" onsubmit="return validateForm()">
+        <div class="form-group left">
+            <p>Ingresa tu correo</p>
+            <input type="email" placeholder="Correo electrónico" required>
+
+            <p>Ingresa tu usuario</p>
+            <input type="text" placeholder="Usuario" required>
+
+            <p>Ingresa tu fecha de nacimiento</p>
+            <input type="date" placeholder="Fecha de nacimiento" required>
+
+            <p>¿Cuál es tu orientación sexual?</p>
+            <select required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="heterosexual">Heterosexual</option>
+                <option value="homosexualLesbiana">Homosexual (Lesbiana)</option>
+                <option value="homosexualGay">Homosexual (Gay)</option>
+                <option value="bisexual">Bisexual</option>
+                <option value="pansexual">Pansexual</option>
+                <option value="asexual">Asexual</option>
+                <option value="demisexual">Demisexual</option>
+                <option value="queer">Queer</option>
+                <option value="fluidSexuality">Fluid Sexuality</option>
+                <option value="interseccionalidad">Interseccionalidad</option>
+            </select>
+
+            <p>¿Qué deseas buscar?</p>
+            <select required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="hombres">Hombres</option>
+                <option value="mujeres">Mujeres</option>
+                <option value="ambos">Ambos</option>
+            </select>
+
+            <p>¿Cuál es tu género?</p>
+            <select required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="cisgenero">Cisgénero</option>
+                <option value="transgenero">Transgénero</option>
+                <option value="noBinario">No binario</option>
+                <option value="generoFluido">Género fluido</option>
+                <option value="agenero">Agénero</option>
+                <option value="bigenero">Bigénero</option>
+                <option value="demigenero">Demigénero</option>
+                <option value="intersex">Intersex</option>
+            </select>
+
+            <p>Selecciona una facultad de la UANL</p>
+            <select required>
+                <option value="" disabled selected>Seleccione</option>
+
+                <optgroup label="Ciencias Sociales y Humanidades">
+                    <option value="facdyc">Facultad de Derecho y Criminología (FACDYC)</option>
+                    <option value="ffyl">Facultad de Filosofía y Letras (FFYL)</option>
+                    <option value="facpsi">Facultad de Psicología (FACPSI)</option>
+                    <option value="fcpyri">Facultad de Ciencias Políticas y Relaciones Internacionales (FCPyRI)</option>
+                </optgroup>
+
+                <optgroup label="Ciencias Económico-Administrativas">
+                    <option value="facpya">Facultad de Contaduría Pública y Administración (FACPYA)</option>
+                    <option value="fime">Facultad de Economía (FIME)</option>
+                </optgroup>
+
+                <optgroup label="Ciencias Exactas y Naturales">
+                    <option value="fic">Facultad de Ingeniería Civil (FIC)</option>
+                    <option value="fcb">Facultad de Ciencias Biológicas (FCB)</option>
+                </optgroup>
+
+                <optgroup label="Ciencias de la Salud">
+                    <option value="facmed">Facultad de Medicina (FACMED)</option>
+                    <option value="facdent">Facultad de Odontología (FACDENT)</option>
+                </optgroup>
+
+                <optgroup label="Cultura Física">
+                    <option value="facdep">Facultad de Organización Deportiva (FOD)</option>
+                </optgroup>
+
+                <optgroup label="Otra">
+                    <option value="otra">Otra</option>
+                </optgroup>
+            </select>
+        </div>
+
+        <div class="form-group right">
+            <p>¿Qué asignaturas necesitas mejorar con más urgencia?</p>
+            <select required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="matematicas">Matemáticas</option>
+                <option value="ciencias">Ciencias</option>
+                <option value="historia">Historia</option>
+                <option value="lenguaje">Lenguaje y Literatura</option>
+                <option value="informatica">Informática</option>
+                <option value="idiomas">Idiomas</option>
+            </select>
+
+            <p>¿Cuál es tu mayor reto académico actualmente?</p>
+            <select required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="comprensionTeoria">Comprender la teoría</option>
+                <option value="practicaProblemas">Realizar ejercicios prácticos</option>
+                <option value="gestionTiempo">Gestión del tiempo</option>
+                <option value="faltaMotivacion">Falta de motivación</option>
+                <option value="preparacionExamenes">Preparación para exámenes</option>
+            </select>
+
+            <p>¿Cómo prefieres aprender: con teoría, práctica o ejemplos?</p>
+            <select required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="teoria">Teoría</option>
+                <option value="practica">Práctica</option>
+                <option value="ejemplos">Ejemplos</option>
+                <option value="mixto">Un enfoque mixto (teoría y práctica)</option>
+            </select>
+
+            <p>¿Cuánto tiempo dedicas a estudiar fuera de clase?</p>
+            <select required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="menos1Hora">Menos de 1 hora al día</option>
+                <option value="1a2Horas">Entre 1 y 2 horas al día</option>
+                <option value="mas2Horas">Más de 2 horas al día</option>
+                <option value="soloAntesExamenes">Solo antes de los exámenes</option>
+            </select>
+
+            <p>¿Qué técnicas de estudio te han funcionado mejor?</p>
+            <select required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="resumenes">Hacer resúmenes</option>
+                <option value="mapasConceptuales">Mapas conceptuales</option>
+                <option value="repeticionEspaciada">Repetición espaciada</option>
+                <option value="gruposEstudio">Estudio en grupo</option>
+                <option value="practicaActiva">Práctica activa (ejercicios, problemas)</option>
+            </select>
+
+            <p>¿Cuál es tu objetivo académico a corto plazo?</p>
+            <select required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="mejorarNotas">Mejorar mis calificaciones</option>
+                <option value="entenderTemas">Entender mejor los temas</option>
+                <option value="aprobarExamenes">Aprobar los próximos exámenes</option>
+                <option value="desarrollarHabilidades">Desarrollar nuevas habilidades</option>
+            </select>
+
+            <p>¿Qué te motiva a aprender?</p>
+            <select required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="curiosidad">Curiosidad y deseo de saber más</option>
+                <option value="metasPersonales">Metas personales o profesionales</option>
+                <option value="exitoAcademico">Éxito académico y buenas calificaciones</option>
+                <option value="reconocimiento">Reconocimiento y aprobación de otros</option>
+            </select>
+
+            <p>¿Prefieres estudiar solo o con un tutor?</p>
+            <select required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="solo">Estudiar solo</option>
+                <option value="tutor">Estudiar con un tutor</option>
+                <option value="ambos">Ambos, dependiendo de la situación</option>
+            </select>
+
+            <p>¿Cómo te organizas para cumplir con tus tareas y proyectos?</p>
+            <select required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="agenda">Uso una agenda o un planificador</option>
+                <option value="listasTareas">Hago listas de tareas</option>
+                <option value="priorizo">Priorizo por orden de importancia</option>
+                <option value="dejoUltimoMomento">Suelo dejar todo para el último momento</option>
+            </select>
+
+            <p>¿Qué esperas lograr trabajando con un tutor académico?</p>
+            <select required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="entenderMejorTemas">Entender mejor los temas complejos</option>
+                <option value="organizarEstudios">Organizar mejor mi tiempo y estudios</option>
+                <option value="mejorarNotas">Mejorar mis calificaciones</option>
+                <option value="prepararExamenes">Prepararme para exámenes importantes</option>
+                <option value="aprenderTecnicasEstudio">Aprender nuevas técnicas de estudio</option>
+            </select>
+        </div>
+        <div class="submit-container">
+            <button type="submit" class="enviar-button">Enviar</button>
+        </div>
+    </form>
+</div>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f8f8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    .main-container {
+        text-align: center;
+        border-radius: 15px;
+        padding: 20px;
+    }
+
+    .logo {
+        font-size: 3rem;
+        color: #FF007F;
+    }
+
+        .logo span {
+            color: #a8005b;
+        }
+
+    .container {
+        text-align: center;
+        background-color: #fff;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 80%;
+        height: 90vh;
+        overflow-y: auto;
+    }
+
+    .form {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        flex-wrap: wrap;
+    }
+
+    .form-group {
+        width: 48%;
+        margin-bottom: 15px;
+    }
+
+        .form-group.left,
+        .form-group.right {
+            text-align: left;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            height: 50px;
+        }
+
+        .form-group p {
+            margin: 0;
+        }
+
+    .submit-container {
+        text-align: center;
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .enviar-button {
+        padding: 10px 20px;
+        background-color: #FF007F;
+        color: #fff;
+        border: none;
+        border-radius: 30px;
+        font-size: 1rem;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s;
+    }
+
+        .enviar-button:hover {
+            background-color: #e6006f;
+        }
+</style>
