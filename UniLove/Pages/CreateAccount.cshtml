@@ -2,133 +2,55 @@
 @model UniLove.Pages.CreateAccountModel
 @{
 }
-<div>
-    <div class="container">
-        <h1 class="logo">Uni<span>Love</span></h1>
-        <p>¿Qué modo deseas jugar?</p>
+<div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <div class="container">
+            <h1 class="logo">Uni<span>Love</span></h1>
+            <p>¿Qué modo deseas jugar?</p>
 
-        <div class="options">
-            <div class="option" onclick="selectMode('pareja')">
-                <img src="https://i.pinimg.com/564x/a5/d7/b1/a5d7b196a47ffd7742eb5230113b91fc.jpg" alt="Pareja">
-                <p>Pareja</p>
-            </div>
-            <div class="option" onclick="selectMode('amigos')">
-                <img src="https://i.pinimg.com/originals/05/12/65/051265325e24f764ed7caef6006d0efd.jpg" alt="Amigos">
-                <p>Amigos</p>
-            </div>
-            <div class="option" onclick="selectMode('academico')">
-                <img src="https://i.pinimg.com/564x/9d/e6/4e/9de64e862c8136ebebf4da58bcdafbae.jpg" alt="Tutor Académico">
-                <p>Tutor Académico</p>
+            <div class="options d-flex justify-content-center">
+                <a class="option" asp-page="CrearCuentaModoPareja">
+                    <div class="image-container">
+                        <img src="https://i.pinimg.com/564x/a5/d7/b1/a5d7b196a47ffd7742eb5230113b91fc.jpg" alt="Pareja">
+                        <div class="overlay">
+                            <p class="hover-text">Encuentra a tu alma gemela</p>
+                        </div>
+                    </div>
+                    <p>Pareja</p>
+                </a>
+                <a class="option" asp-page="CrearCuentaModoAmigos">
+                    <div class="image-container">
+                        <img src="https://i.pinimg.com/originals/05/12/65/051265325e24f764ed7caef6006d0efd.jpg" alt="Amigos">
+                        <div class="overlay">
+                            <p class="hover-text">Crea nuevas amistades</p>
+                        </div>
+                    </div>
+                    <p>Amigos</p>
+                </a>
+                <a class="option" asp-page="CrearCuentaModoTutor">
+                    <div class="image-container">
+                        <img src="https://i.pinimg.com/564x/9d/e6/4e/9de64e862c8136ebebf4da58bcdafbae.jpg" alt="Tutor Académico">
+                        <div class="overlay">
+                            <p class="hover-text">Encuentra el apoyo académico que necesitas</p>
+                        </div>
+                    </div>
+                    <p>Tutor Académico</p>
+                </a>
             </div>
         </div>
-
-        <form class="form" onsubmit="return validateForm()">
-            <div class="form-group left">
-                <p>Ingresa tu correo</p>
-                <input type="email" placeholder="Correo electrónico" required>
-
-                <p>Ingresa tu usuario</p>
-                <input type="text" placeholder="Usuario" required>
-
-                <p>Ingresa tu fecha de nacimiento</p>
-                <input type="date" placeholder="Fecha de nacimiento" required>
-            </div>
-            <div class="form-group right">
-                <p>¿Cuál es tu orientación sexual?</p>
-                <select required>
-                    <option value="" disabled selected>Seleccione</option>
-                    <option value="heterosexual">Heterosexual</option>
-                    <option value="homosexualLesbiana">Homosexual (Lesbiana)</option>
-                    <option value="homosexualGay">Homosexual (Gay)</option>
-                    <option value="bisexual">Bisexual</option>
-                    <option value="pansexual">Pansexual</option>
-                    <option value="asexual">Asexual</option>
-                    <option value="demisexual">Demisexual</option>
-                    <option value="queer">Queer</option>
-                    <option value="fluidSexuality">Fluid Sexuality</option>
-                    <option value="interseccionalidad">Interseccionalidad</option>
-                </select>
-
-                <p>¿Qué deseas buscar?</p>
-                <select required>
-                    <option value="" disabled selected>Seleccione</option>
-                    <option value="hombres">Hombres</option>
-                    <option value="mujeres">Mujeres</option>
-                    <option value="ambos">Ambos</option>
-                </select>
-
-                <p>¿Cual es tu género?</p>
-                <select required>
-                    <option value="" disabled selected>Seleccione</option>
-                    <option value="cisgenero">Cisgénero</option>
-                    <option value="transgenero">Transgénero</option>
-                    <option value="noBinario">No binario</option>
-                    <option value="generoFluido">Género fluido</option>
-                    <option value="agenero">Agénero</option>
-                    <option value="bigenero">Bigénero</option>
-                    <option value="demigenero">Demigénero</option>
-                    <option value="intersex">Intersex</option>
-                </select>
-
-                <p>Selecciona una facultad de la UANL</p>
-                <select required>
-                    <option value="" disabled selected>Seleccione</option>
-
-                    <optgroup label="Ciencias Sociales y Humanidades">
-                        <option value="facdyc">Facultad de Derecho y Criminología (FACDYC)</option>
-                        <option value="ffyl">Facultad de Filosofía y Letras (FFYL)</option>
-                        <option value="facpsi">Facultad de Psicología (FACPSI)</option>
-                        <option value="fcpyri">Facultad de Ciencias Políticas y Relaciones Internacionales (FCPyRI)</option>
-                    </optgroup>
-
-                    <optgroup label="Ciencias Económico-Administrativas">
-                        <option value="facpya">Facultad de Contaduría Pública y Administración (FACPYA)</option>
-                        <option value="fime">Facultad de Economía (FIME)</option>
-                    </optgroup>
-
-                    <optgroup label="Ciencias Exactas y Naturales">
-                        <option value="fic">Facultad de Ingeniería Civil (FIC)</option>
-                        <option value="fcb">Facultad de Ciencias Biológicas (FCB)</option>
-                    </optgroup>
-
-                    <optgroup label="Ciencias de la Salud">
-                        <option value="facmed">Facultad de Medicina (FACMED)</option>
-                        <option value="facdent">Facultad de Odontología (FACDENT)</option>
-                    </optgroup>
-
-                    <optgroup label="Cultura Física">
-                        <option value="facdep">Facultad de Organización Deportiva (FOD)</option>
-                    </optgroup>
-
-                    <optgroup label="Otra">
-                        <option value="otra">Otra</option>
-                    </optgroup>
-                </select>
-            </div>
-        </form>
-        <button type="submit" class="enviar-button" onclick="submitForm()">Siguiente</button>
-        
-        
     </div>
 </div>
 
 <style>
     body {
         font-family: Arial, sans-serif;
-        background-color: #f8f8f8;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
         margin: 0;
     }
 
     .container {
         text-align: center;
-        background-color: #fff;
         border-radius: 15px;
         padding: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     .logo {
@@ -136,9 +58,9 @@
         color: #FF007F;
     }
 
-    .logo span {
-        color: #a8005b;
-    }
+        .logo span {
+            color: #a8005b;
+        }
 
     p {
         margin-bottom: 10px;
@@ -146,103 +68,55 @@
     }
 
     .options {
-        display: flex;
-        justify-content: space-around;
+        flex-wrap: wrap;
     }
 
     .option {
         text-align: center;
         cursor: pointer;
+        margin: 10px;
+        text-decoration: none; /* Quita el subrayado del enlace */
     }
 
-    .option img {
-        width: 200px;
-        height: 150px;
-        border-radius: 10px;
+    .image-container {
+        position: relative;
     }
 
-    .form {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 20px;
-    }
+        .image-container img {
+            width: 250px;
+            height: 200px;
+            border-radius: 10px;
+            object-fit: cover;
+            transition: filter 0.3s ease;
+        }
 
-    .form-group {
-        width: 48%;
-        margin-bottom: 15px;
-    }
-
-    .form-group.left,
-    .form-group.right {
-        text-align: left;
-    }
-
-    .form-group input,
-    .form-group select {
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Capa oscura */
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .hover-text {
+        color: white;
+        font-size: 1.2rem;
+        text-align: center;
         padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 20px;
-        box-sizing: border-box;
-        margin-bottom: 10px;
-        height: 50px; /* Set a fixed height for uniformity */
     }
 
-    .form-group p {
-        margin: 0;
+    .image-container:hover img {
+        filter: brightness(50%); /* Obscurece la imagen */
     }
 
-    .enviar-button {
-        padding: 10px 20px;
-        background-color: #FF007F;
-        color: #fff;
-        border: none;
-        border-radius: 30px;
-        font-size: 1rem;
-        cursor: pointer;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        transition: background-color 0.3s;
-    }
-
-    .enviar-button:hover {
-        background-color: #e6006f;
+    .image-container:hover .overlay {
+        opacity: 1;
     }
 </style>
-
-<script>
-    function selectMode(mode) {
-        document.getElementById('selectedMode').value = mode;
-        const options = document.querySelectorAll('.option');
-        options.forEach(option => option.style.opacity = '0.5'); // Dim unselected options
-        event.currentTarget.style.opacity = '1'; // Highlight selected option
-    }
-
-    function validateForm() {
-        const mode = document.getElementById('selectedMode').value;
-        const inputs = document.querySelectorAll('.form-group input, .form-group select');
-        let allFilled = true;
-
-        // Check if all inputs and selects are filled
-        inputs.forEach(input => {
-            if (!input.value) {
-                allFilled = false;
-            }
-        });
-
-        if (!mode) {
-            alert('Por favor, selecciona un modo de juego.');
-            return false; // Prevent form submission
-        } else if (!allFilled) {
-            alert('Por favor, llena todos los campos.');
-            return false; // Prevent form submission
-        }
-
-        return true; // Allow form submission
-    }
-
-    function submitForm() {
-        if (validateForm()) {
-            document.querySelector('.form').submit(); // Submit the form if validation passes
-        }
-    }
-</script>
