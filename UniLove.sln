@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UniLove", "UniLove\UniLove.csproj", "{FCB54CBB-28DA-4EB1-97FF-A09AD1280D97}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BaseDataUniLove", "BaseDataUniLove\BaseDataUniLove.sqlproj", "{CB6E15EC-FDC0-4B38-BCC6-7362AA1B95C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,12 @@ Global
 		{FCB54CBB-28DA-4EB1-97FF-A09AD1280D97}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCB54CBB-28DA-4EB1-97FF-A09AD1280D97}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCB54CBB-28DA-4EB1-97FF-A09AD1280D97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB6E15EC-FDC0-4B38-BCC6-7362AA1B95C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB6E15EC-FDC0-4B38-BCC6-7362AA1B95C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB6E15EC-FDC0-4B38-BCC6-7362AA1B95C6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{CB6E15EC-FDC0-4B38-BCC6-7362AA1B95C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB6E15EC-FDC0-4B38-BCC6-7362AA1B95C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB6E15EC-FDC0-4B38-BCC6-7362AA1B95C6}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
