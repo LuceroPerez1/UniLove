@@ -7,19 +7,19 @@
     <h1 class="logo">Uni<span>Love</span></h1>
 </div>
 <div class="modoAmigos">
-    <form class="form" onsubmit="return validateForm()">
+    <form method="post" class="form">
         <div class="form-group left">
             <p>Ingresa tu correo</p>
-            <input type="email" placeholder="Correo electrónico" required>
+            <input type="email" asp-for="Usuarios.CorreoElectronico" placeholder="Correo electrónico" required />
 
             <p>Ingresa tu usuario</p>
-            <input type="text" placeholder="Usuario" required>
+            <input type="text" asp-for="Usuarios.NombreUsuario" placeholder="Usuario" required />
 
             <p>Ingresa tu fecha de nacimiento</p>
-            <input type="date" required>
+            <input type="date" asp-for="Usuarios.FechaNacimiento" required />
 
             <p>¿Cuál es tu orientación sexual?</p>
-            <select required>
+            <select asp-for="Usuarios.OrientacionSexual" required>
                 <option value="" disabled selected>Seleccione</option>
                 <option value="heterosexual">Heterosexual</option>
                 <option value="homosexualLesbiana">Homosexual (Lesbiana)</option>
@@ -35,7 +35,7 @@
         </div>
         <div class="form-group right">
             <p>¿Qué deseas buscar?</p>
-            <select required>
+            <select asp-for="Usuarios.DeseaBuscar" required>
                 <option value="" disabled selected>Seleccione</option>
                 <option value="hombres">Hombres</option>
                 <option value="mujeres">Mujeres</option>
@@ -43,8 +43,10 @@
             </select>
 
             <p>¿Cuál es tu género?</p>
-            <select required>
+            <select asp-for="Usuarios.Genero" required>
                 <option value="" disabled selected>Seleccione</option>
+                <option value="femenino">Femenino</option>
+                <option value="masculino">Masculino</option>
                 <option value="cisgenero">Cisgénero</option>
                 <option value="transgenero">Transgénero</option>
                 <option value="noBinario">No binario</option>
@@ -56,7 +58,7 @@
             </select>
 
             <p>Selecciona una facultad de la UANL</p>
-            <select required>
+            <select asp-for="Usuarios.Facultad" required>
                 <option value="" disabled selected>Seleccione</option>
                 <optgroup label="Ciencias Sociales y Humanidades">
                     <option value="facdyc">Facultad de Derecho y Criminología (FACDYC)</option>
@@ -85,7 +87,7 @@
             </select>
         </div>
         <div class="submit-container">
-            <button type="submit" class="enviar-button" onclick="location.href='/CreateAccount';">Enviar</button>
+            <button type="submit" class="enviar-button">Enviar</button>
         </div>
     </form>
 </div>
@@ -160,6 +162,7 @@
         transition: background-color 0.3s;
     }
 
-        .enviar-button:hover {
-            background-color: #e6006f;
-        }
+    .enviar-button:hover {
+        background-color: #e6006f;
+    }
+</style>
