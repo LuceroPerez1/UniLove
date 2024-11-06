@@ -18,6 +18,10 @@
             <p>Ingresa tu fecha de nacimiento</p>
             <input type="date" asp-for="Usuarios.FechaNacimiento" required />
 
+            <p>Ingresa tu contraseña</p>
+            <input type="text" asp-for="Usuarios.Contraseña" placeholder="Contraseña" required />
+        </div>
+        <div class="form-group right">
             <p>¿Cuál es tu orientación sexual?</p>
             <select asp-for="Usuarios.OrientacionSexual" required>
                 <option value="" disabled selected>Seleccione</option>
@@ -32,8 +36,6 @@
                 <option value="fluidSexuality">Fluid Sexuality</option>
                 <option value="interseccionalidad">Interseccionalidad</option>
             </select>
-        </div>
-        <div class="form-group right">
             <p>¿Qué deseas buscar?</p>
             <select asp-for="Usuarios.DeseaBuscar" required>
                 <option value="" disabled selected>Seleccione</option>
