@@ -7,16 +7,20 @@
 <div class="login-container">
     <h1 class="logo">Uni<span>Love</span></h1>
     <p>Swipea para amor, amistad o el mejor tutor!</p>
-    <form id="loginForm">
-        <input type="text" class="form-control input-width" placeholder="Usuario" required>
-        <input type="password" class="form-control input-width mt-3" placeholder="Contraseña" required>
+    <form method="post">
+        <input type="text" class="form-control input-width" asp-for="NombreUsuario" placeholder="Usuario" required>
+        <input type="password" class="form-control input-width mt-3" asp-for="Contraseña" placeholder="Contraseña" required>
         <div class="button-container">
-            <!-- Botón para mostrar el cuadro de privacidad -->
             <button type="button" class="btn btn-create-account mt-4" data-bs-toggle="modal" data-bs-target="#privacyModal">Crear cuenta</button>
-            <!-- Botón para enviar el formulario -->
-            <button type="button" class="btn btn-login mt-4" onclick="window.location.href='/Navegacion'">Ingresar</button>
+            <button type="submit" class="btn btn-login mt-4">Ingresar</button>
         </div>
     </form>
+
+    <!-- Mensaje de error si la autenticación falla -->
+    @if (Model.ErrorMessage != null)
+    {
+        <div class="alert alert-danger">@Model.ErrorMessage</div>
+    }
 </div>
 
 <!-- Modal de Aviso de Privacidad -->
