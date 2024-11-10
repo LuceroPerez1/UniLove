@@ -1,4 +1,4 @@
-﻿@page
+﻿@* @page
 @model UniLove.Pages.CrearCuentaModoAmigosModel
 @{
 }
@@ -10,7 +10,7 @@
     <form class="form" onsubmit="return validateForm()">
         <div class="form-group left">
             <p>¿Cómo describirías a tu mejor amigo?</p>
-            <select required>
+            <select asp-for="ModoAmigos.MejorAmigo" required>
                 <option value="" disabled selected>Seleccione</option>
                 <option value="leal">Leal y de confianza</option>
                 <option value="divertido">Divertido/a y siempre animado/a</option>
@@ -21,7 +21,7 @@
             </select>
 
             <p>¿Qué actividad te gusta hacer con tus amigos en tu tiempo libre?</p>
-            <select required>
+            <select asp-for="ModoAmigos.TiempoLibre" required>
                 <option value="" disabled selected>Seleccione</option>
                 <option value="salirCenar">Salir a cenar o tomar algo</option>
                 <option value="verPeliculas">Ver películas o series</option>
@@ -31,7 +31,7 @@
             </select>
 
             <p>¿Cuál es tu plan ideal para una noche con amigos?</p>
-            <select required>
+            <select asp-for="ModoAmigos.PlanIdeal" required>
                 <option value="" disabled selected>Seleccione</option>
                 <option value="salirFiesta">Salir de fiesta</option>
                 <option value="nocheJuegos">Noche de juegos en casa</option>
@@ -41,7 +41,7 @@
             </select>
 
             <p>¿Qué tipo de humor disfrutas más entre amigos?</p>
-            <select required>
+            <select asp-for="ModoAmigos.Humor" required>
                 <option value="" disabled selected>Seleccione</option>
                 <option value="sarcastico">Humor sarcástico</option>
                 <option value="tonto">Humor tonto e inocente</option>
@@ -51,7 +51,7 @@
             </select>
 
             <p>¿Cuál es tu forma favorita de apoyar a un amigo en tiempos difíciles?</p>
-            <select required>
+            <select asp-for="ModoAmigos.FormaFavorita" required>
                 <option value="" disabled selected>Seleccione</option>
                 <option value="escuchar">Escuchar y estar presente</option>
                 <option value="darConsejo">Ofrecer consejos y soluciones</option>
@@ -61,7 +61,7 @@
         </div>
         <div class="form-group right">
             <p>¿Qué es lo que más valoras en una amistad?</p>
-            <select required>
+            <select asp-for="ModoAmigos.ValorAmistad" required>
                 <option value="" disabled selected>Seleccione</option>
                 <option value="confianza">Confianza</option>
                 <option value="honestidad">Honestidad</option>
@@ -71,7 +71,7 @@
             </select>
 
             <p>¿Prefieres tener un grupo grande de amigos o pocos amigos cercanos?</p>
-            <select required>
+            <select asp-for="ModoAmigos.GrupoAmigos" required>
                 <option value="" disabled selected>Seleccione</option>
                 <option value="grupoGrande">Grupo grande de amigos</option>
                 <option value="pocosCercanos">Pocos amigos cercanos</option>
@@ -79,7 +79,7 @@
             </select>
 
             <p>¿Cuál es el mejor recuerdo que tienes con un amigo?</p>
-            <select required>
+            <select asp-for="ModoAmigos.MejorRecuerdo" required>
                 <option value="" disabled selected>Seleccione</option>
                 <option value="viajeJuntos">Un viaje que hicimos juntos</option>
                 <option value="celebracionEspecial">Una celebración especial</option>
@@ -89,7 +89,7 @@
             </select>
 
             <p>¿Qué harías si tu amigo se equivocara en algo importante?</p>
-            <select required>
+            <select asp-for="ModoAmigos.EquivocarAmigo" required>
                 <option value="" disabled selected>Seleccione</option>
                 <option value="confrontarlo">Confrontarlo de manera directa</option>
                 <option value="hablarloConCuidado">Hablarlo con cuidado y comprensión</option>
@@ -98,7 +98,7 @@
             </select>
 
             <p>¿Qué cualidades crees que son esenciales para una amistad duradera?</p>
-            <select required>
+            <select asp-for="ModoAmigos.CualidadAmistad" required>
                 <option value="" disabled selected>Seleccione</option>
                 <option value="confianza">Confianza mutua</option>
                 <option value="comunicacion">Comunicación honesta</option>
@@ -190,8 +190,8 @@
     }
 
     .enviar-button {
-        padding: 10px 20px;
-        background-color: #FF007F;
+        padding: 10px 20px; *@
+@*         background-color: #FF007F;
         color: #fff;
         border: none;
         border-radius: 30px;
@@ -204,4 +204,4 @@
     .enviar-button:hover {
         background-color: #e6006f;
     }
-</style>
+</style> *@

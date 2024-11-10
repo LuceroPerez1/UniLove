@@ -7,6 +7,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\ModoAmigos.cs" />
+    <Compile Remove="Models\ModoPareja.cs" />
+    <Compile Remove="Models\ModoTutor.cs" />
+    <Compile Remove="Pages\CrearCuentaModoAmigos.cshtml.cs" />
+    <Compile Remove="Pages\CrearCuentaModoPareja.cshtml.cs" />
+    <Compile Remove="Pages\CrearCuentaModoTutor.cshtml.cs" />
+    <Compile Remove="Pages\CreateAccount.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\CrearCuentaModoAmigos.cshtml" />
+    <Content Remove="Pages\CrearCuentaModoPareja.cshtml" />
+    <Content Remove="Pages\CrearCuentaModoTutor.cshtml" />
+    <Content Remove="Pages\CreateAccount.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="bootstrap" Version="5.3.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.10" />
