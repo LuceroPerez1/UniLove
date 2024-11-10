@@ -7,17 +7,22 @@
     <div class="w-100 d-flex justify-content-between align-items-start p-3">
         <!-- Icono de perfil del usuario en la esquina superior izquierda -->
         <div>
-            <a href="/Cuenta" title="Mi Cuenta">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="width: 70px; height: 70px; color: #FF007F;">
+            <a href="/Perfil" title="Mi Cuenta">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="width: 60px; height: 60px; color: #FF007F;">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                 </svg>
             </a>
         </div>
 
+        <!-- Texto UniLove entre los iconos -->
+        <div class="logo-container d-flex align-items-center">
+            <h1 class="logo mb-0">Uni<span>Love</span></h1>
+        </div>
+
         <!-- Icono de mensajes en la esquina superior derecha -->
         <div>
             <a href="/Mensajes" title="Mensajes">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="width: 70px; height: 70px; color: #FF007F;">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="width: 60px; height: 60px; color: #FF007F;">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" />
                 </svg>
             </a>
@@ -31,9 +36,8 @@
 
     <!-- Botones de acción debajo de la imagen (más separados) -->
     <div class="actions text-center mt-4">
-        <button class="btn btn-pink mx-2" style="width: 180px; height: 60px; font-size: 1.5rem;">Dislike</button>
-        <button class="btn btn-pink mx-2" style="width: 180px; height: 60px; font-size: 1.5rem;">Like</button>
-
+        <button class="btn btn-pink mx-2" style="width: 160px; height: 50px; font-size: 1.5rem;">Dislike</button>
+        <button class="btn btn-pink mx-2" style="width: 160px; height: 50px; font-size: 1.5rem;">Like</button>
     </div>
 </div>
 
@@ -53,12 +57,30 @@
         font-weight: bold;
     }
 
-        .btn-pink:hover {
-            background-color: #FF66A1;
-        }
+    .btn-pink:hover {
+        background-color: #FF66A1;
+    }
+
     .custom-container {
-    max-width: 800px; /* Ajusta el ancho máximo según tus necesidades */
-    width: 100%; /* Asegura que ocupe el 100% de ancho disponible hasta el max-width */
-    margin: 0 auto; /* Centra el contenedor */
-}
+        max-width: 800px; /* Ajusta el ancho máximo según tus necesidades */
+        width: 100%; /* Asegura que ocupe el 100% de ancho disponible hasta el max-width */
+        margin: 0 auto; /* Centra el contenedor */
+    }
+
+    /* Estilos para el logo de UniLove */
+    .logo-container {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .logo {
+        font-size: 3rem;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif bold;
+        color: #FF007F;
+    }
+
+    .logo span {
+        color: darkgray; /* Puedes cambiar este color si prefieres otro */
+    }
 </style>

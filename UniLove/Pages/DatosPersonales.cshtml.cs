@@ -30,7 +30,7 @@ namespace UniLove.Pages
             _context.Usuarios.Add(Usuarios);
             _context.SaveChanges();
 
-            return RedirectToPage("/CreateAccount");
+            return RedirectToPage("/Navegacion");
         }
     }
 }

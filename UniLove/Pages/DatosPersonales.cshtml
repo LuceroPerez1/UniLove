@@ -5,9 +5,35 @@
 
 <div class="main-container">
     <h1 class="logo">Uni<span>Love</span></h1>
+    <p class="textoModoJuego">¿Qué modo de juego deseas?</p>
 </div>
-<div class="modoAmigos">
+<div>
     <form method="post" class="form">
+        <div class="game-modes">
+            <label class="game-option">
+                <input type="radio" asp-for="Usuarios.ModoJuego" value="modoAmigos" required>
+                <div class="card">
+                    <img src="https://i.pinimg.com/originals/05/12/65/051265325e24f764ed7caef6006d0efd.jpg" alt="Modo Amigos">
+                    <p>Modo Amigos</p>
+                </div>
+            </label>
+
+            <label class="game-option">
+                <input type="radio" asp-for="Usuarios.ModoJuego" value="modoPareja" required>
+                <div class="card">
+                    <img src="https://i.pinimg.com/564x/a5/d7/b1/a5d7b196a47ffd7742eb5230113b91fc.jpg" alt="Modo Pareja">
+                    <p>Modo Pareja</p>
+                </div>
+            </label>
+
+            <label class="game-option">
+                <input type="radio" asp-for="Usuarios.ModoJuego" value="modoTutor" required>
+                <div class="card">
+                    <img src="https://i.pinimg.com/564x/9d/e6/4e/9de64e862c8136ebebf4da58bcdafbae.jpg" alt="Modo Tutor">
+                    <p>Modo Tutor</p>
+                </div>
+            </label>
+        </div>
         <div class="form-group left">
             <p>Ingresa tu correo</p>
             <input type="email" asp-for="Usuarios.CorreoElectronico" placeholder="Correo electrónico" required />
@@ -21,7 +47,7 @@
             <p>Ingresa tu contraseña</p>
             <input type="text" asp-for="Usuarios.Contraseña" placeholder="Contraseña" required />
         </div>
-        <div class="form-group right">
+        <div class="form-group">
             <p>¿Cuál es tu orientación sexual?</p>
             <select asp-for="Usuarios.OrientacionSexual" required>
                 <option value="" disabled selected>Seleccione</option>
@@ -89,6 +115,81 @@
                 </optgroup>
             </select>
         </div>
+        
+        <div class="form-group">
+            <p>¿Qué valoras más en una relación interpersonal?</p>
+            <select asp-for="Usuarios.ValorRelacion" required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="confianza">Confianza</option>
+                <option value="diversion">Diversión</option>
+                <option value="apoyoMutuo">Apoyo mutuo</option>
+                <option value="respeto">Respeto</option>
+            </select>
+
+            <p>¿Qué tipo de actividades prefieres hacer en tu tiempo libre?</p>
+            <select asp-for="Usuarios.TiempoLibre" required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="salirConAmigos">Salir con amigos</option>
+                <option value="estudiarAprender">Estudiar o aprender algo nuevo</option>
+                <option value="tiempoConAlguienEspecial">Pasar tiempo de calidad con alguien especial</option>
+                <option value="deportes">Realizar deportes o actividades al aire libre</option>
+            </select>
+
+            <p>¿Cómo te gustaría que fuera tu círculo social ideal?</p>
+            <select asp-for="Usuarios.CirculoSocial" required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="cercanoYPequeno">Cercano y pequeño</option>
+                <option value="amplioYdiverso">Amplio y diverso</option>
+                <option value="grupoInteresesSimilares">Un grupo con intereses similares</option>
+                <option value="grupoFlexible">Flexible, con amistades de diferentes áreas</option>
+            </select>
+
+            <p>¿Qué tan importante es para ti la lealtad en las relaciones?</p>
+            <select asp-for="Usuarios.Lealtad" required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="muyImportante">Muy importante</option>
+                <option value="algoImportante">Algo importante</option>
+                <option value="noEsTanImportante">No es tan importante</option>
+                <option value="dependeSituacion">Depende de la situación</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <p>¿Cómo prefieres compartir tus logros o avances personales?</p>
+            <select asp-for="Usuarios.Logros" required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="conAmigosCercanos">Con mis amigos más cercanos</option>
+                <option value="conParejaOAlguienEspecial">Con mi pareja o alguien especial</option>
+                <option value="conTutorOMentor">Con un tutor o mentor</option>
+                <option value="deFormaPrivada">De forma privada, sin compartir mucho</option>
+            </select>
+
+            <p>¿Qué es lo que más valoras en una conversación o interacción con otras personas?</p>
+            <select asp-for="Usuarios.ValorConversacion" required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="escucharYAprender">Escuchar y aprender</option>
+                <option value="compartirExperiencias">Compartir experiencias y opiniones</option>
+                <option value="recibirApoyo">Recibir apoyo y consejos</option>
+                <option value="sentirmeComprendido">Sentirme comprendido/a</option>
+            </select>
+
+            <p>¿Qué tan interesado/a estás en mejorar tu vida académica o profesional?</p>
+            <select asp-for="Usuarios.InteresMejorar" required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="prioridad">Es una prioridad para mí</option>
+                <option value="mejorarPeroNoPrioridad">Me gustaría mejorar, pero no es mi enfoque principal</option>
+                <option value="noEsMiEnfoque">No estoy tan enfocado/a en ello</option>
+                <option value="aprendizajeAutodidacta">Prefiero aprender de forma autodidacta</option>
+            </select>
+
+            <p>¿Cómo prefieres resolver conflictos con otras personas?</p>
+            <select asp-for="Usuarios.ResolucionConflictos" required>
+                <option value="" disabled selected>Seleccione</option>
+                <option value="hablandoYAcuerdo">Hablando y llegando a un acuerdo</option>
+                <option value="evitarConfrontaciones">Evitando confrontaciones y dejando pasar el problema</option>
+                <option value="pidiendoAyudaImparcial">Pidiendo ayuda a alguien imparcial</option>
+                <option value="solucionRapida">Tratando de solucionarlo rápidamente, sin mucha discusión</option>
+            </select>
+        </div>
         <div class="submit-container">
             <button type="submit" class="enviar-button">Enviar</button>
         </div>
@@ -102,7 +203,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
         margin: 0;
     }
 
@@ -111,14 +211,19 @@
         padding: 20px;
     }
 
+    .main-container p {
+        font-weight: bold;
+    }
+
     .logo {
         font-size: 3rem;
         color: #FF007F;
+        padding-bottom: 15px;
     }
 
-        .logo span {
-            color: #a8005b;
-        }
+    .logo span {
+        color: #a8005b;
+    }
 
     .form {
         display: flex;
@@ -130,22 +235,23 @@
     .form-group {
         width: 48%;
         margin-bottom: 15px;
+        padding-top: 40px; 
     }
 
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 20px;
-            box-sizing: border-box;
-            margin-bottom: 10px;
-            height: 50px;
-        }
+    .form-group input,
+    .form-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+        height: 50px;
+    }
 
-        .form-group p {
-            margin: 0;
-        }
+    .form-group p {
+        margin: 0;
+    }
 
     .submit-container {
         text-align: center;
@@ -167,5 +273,67 @@
 
     .enviar-button:hover {
         background-color: #e6006f;
+    }
+
+    .game-modes-container {
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Título del modo de juego */
+    .game-modes-title {
+        font-weight: bold;
+        font-size: 1.2em;
+        margin-bottom: 15px;
+    }
+
+    /* Contenedor de opciones de juego */
+    .game-modes {
+        display: flex;
+        justify-content: center;
+        gap: 50px; /* Espacio entre las imágenes */
+        margin-bottom: 20px;
+        padding-left: 100px;
+    }
+    /* Opciones de juego */
+    .game-option {
+        text-align: center;
+    }
+
+    .game-option input[type="radio"] {
+        display: none;
+    }
+
+    /* Estilo de la tarjeta */
+    .card {
+        border: 2px solid transparent;
+        padding: 10px;
+        border-radius: 8px;
+        transition: border-color 0.3s ease;
+    }
+
+    /* Resaltar la tarjeta seleccionada */
+    .game-option input[type="radio"]:checked + .card {
+        border-color: #007bff;
+        box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+    }
+
+    /* Estilo de la imagen */
+    .card img {
+        width: 300px;
+        height: 300px;
+        border-radius: 5px;
+        margin-bottom: 8px;
+    }
+
+    /* Texto dentro de la tarjeta */
+    .card p {
+        font-weight: bold;
+        color: #333;
+    }
+
+    /* Efecto hover */
+    .game-option:hover .card {
+        border-color: #007bff;
     }
 </style>

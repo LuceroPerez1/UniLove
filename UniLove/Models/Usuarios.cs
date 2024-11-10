@@ -14,6 +14,15 @@ namespace UniLove.Models
         public string DeseaBuscar { get; set; }
         public string Genero { get; set; }
         public string Facultad { get; set; }
+        public string ModoJuego { get; set; }   
+        public string ValorRelacion { get; set; }
+        public string TiempoLibre { get; set; }
+        public string CirculoSocial { get; set; }
+        public string Lealtad { get; set; }
+        public string Logros { get; set; }
+        public string ValorConversacion { get; set;}
+        public string InteresMejorar { get; set; }
+        public string ResolucionConflictos { get; set; }
     }
 }
 
