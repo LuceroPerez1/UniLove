@@ -9,8 +9,8 @@ namespace UniLove.Pages
     {
         private readonly ApplicationDbContext _context;
 
-        // Propiedad para almacenar el nombre del usuario con el mismo modo de juego
-        public string UsuarioModoJuego { get; set; }
+        // Propiedad para almacenar el usuario que se obtiene con el mismo modo de juego
+        public Usuarios Usuarios { get; set; }
 
         // El valor del ModoJuego para el usuario actual
         public string ModoJuego { get; set; }
@@ -32,20 +32,11 @@ namespace UniLove.Pages
             }
 
             // Obtener un usuario que tenga el mismo ModoJuego
-            var usuario = _context.Usuarios
+            Usuarios = _context.Usuarios
                 .Where(u => u.ModoJuego == ModoJuego)
                 .OrderBy(r => Guid.NewGuid()) // Orden aleatorio para obtener un usuario aleatorio con el mismo modo
                 .FirstOrDefault(); // Tomar el primer usuario que coincida
-
-            if (usuario != null)
-            {
-                UsuarioModoJuego = usuario.NombreUsuario; // Asignar el nombre del usuario encontrado
-            }
-            else
-            {
-                UsuarioModoJuego = "No hay usuarios disponibles"; // Si no se encuentra ningún usuario con el mismo modo de juego
-            }
         }
-
     }
 }
+
