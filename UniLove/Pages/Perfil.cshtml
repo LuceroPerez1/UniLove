@@ -3,29 +3,31 @@
 @{
 }
 <div class="custom-container vh-100 d-flex flex-column justify-content-start align-items-center bg-light">
-    <!-- Encabezado con logo y icono de perfil -->
-    <div class="w-100 d-flex justify-content-between align-items-center p-3">
+    <!-- Encabezado con logo -->
+    <div class="w-100 d-flex justify-content-start align-items-center p-3">
         <!-- Logo de UniLove en la esquina superior izquierda -->
-        <div class="logo-container">
+        <div class="logo-container ms-5">
             <h1 class="logo">Uni<span>Love</span></h1>
         </div>
-
-        <!-- Icono de perfil centrado -->
-        <div class="text-center">
-            <a title="Mi Cuenta">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="width: 100px; height: 100px; color: #FF007F;">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                </svg>
-            </a>
-        </div>
-
-        <!-- Espacio vacío para mantener el icono centrado -->
-        <div style="width: 20px;"></div>
     </div>
 
-    <!-- Texto "hola" debajo del icono de perfil -->
-    <div class="mt-3">
-        <h2 style="color: #FF007F;">hola</h2>
+    <!-- Icono de perfil centrado debajo del logo y encima de la información del usuario -->
+    <div class="profile-icon mt-3">
+        <a title="Mi Cuenta">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="width: 100px; height: 100px; color: #FF007F;">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+            </svg>
+        </a>
+    </div>
+
+    <!-- Información del usuario centrada debajo del ícono de perfil -->
+    <div class="user-info text-center mt-4">
+        <h1>Perfil de @Model.Usuario.NombreUsuario</h1>
+        <p><strong>Correo Electrónico:</strong> @Model.Usuario.CorreoElectronico</p>
+        <p><strong>Fecha de Nacimiento:</strong> @Model.Usuario.FechaNacimiento.ToShortDateString()</p>
+        <p><strong>Orientación Sexual:</strong> @Model.Usuario.OrientacionSexual</p>
+        <p><strong>Género:</strong> @Model.Usuario.Genero</p>
+        <p><strong>Facultad:</strong> @Model.Usuario.Facultad</p>
     </div>
 </div>
 
@@ -49,8 +51,28 @@
         color: #FF007F;
     }
 
-    .logo span {
-        color: darkgray;
+        .logo span {
+            color: darkgray;
+        }
+
+    /* Icono de perfil centrado */
+    .profile-icon {
+        display: flex;
+        justify-content: center;
+        margin-top: -10px;
+    }
+
+    /* Estilo para la información del usuario centrada */
+    .user-info {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     }
 </style>
+
+
+
 

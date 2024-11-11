@@ -7,7 +7,7 @@
 
 <div class="custom-container vh-100 d-flex flex-column justify-content-center align-items-center bg-light">
     <!-- Encabezado con iconos -->
-    <div class="w-100 d-flex justify-content-between align-items-start p-3">
+    <div class="w-100 d-flex justify-content-between align-items-start p-3 mt-2">
         <!-- Icono de perfil del usuario en la esquina superior izquierda -->
         <div>
             <a href="/Perfil" title="Mi Cuenta">
@@ -23,13 +23,13 @@
         </div>
 
         <!-- Icono de mensajes en la esquina superior derecha -->
-        <div>
+        @* <div>
             <a href="/Mensajes" title="Mensajes">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="width: 60px; height: 60px; color: #FF007F;">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="width: 40px; height: 40px; color: #FF007F;">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" />
                 </svg>
             </a>
-        </div>
+        </div> *@
     </div>
 
     <!-- Imagen del perfil en el centro (más grande) -->
@@ -37,12 +37,12 @@
         <img src="https://cdn.pixabay.com/photo/2018/11/13/21/43/avatar-3814049_1280.png" alt="Foto de perfil" class="img-fluid rounded" style="max-width: 60%; height: auto; border-radius: 10px;">
     </div>
 
-    <div>
-        <p>Usuario con el mismo modo de juego: @usuarioModoJuego</p> 
+    <div class="usuario">
+        <p>@usuarioModoJuego</p> 
     </div>
 
     <!-- Botones de acción debajo de la imagen (más separados) -->
-    <div class="actions text-center mt-4">
+    <div class="actions text-center mt-3 mb-5">
         <button class="btn btn-pink mx-2" style="width: 160px; height: 50px; font-size: 1.5rem;">Dislike</button>
         <button class="btn btn-pink mx-2" style="width: 160px; height: 50px; font-size: 1.5rem;">Like</button>
     </div>
@@ -54,6 +54,11 @@
         margin: 0;
         background-color: #FF007F;
         font-family: Arial, sans-serif;
+    }
+
+    .usuario p{
+        font-weight: bold;
+        font-size: 2.5rem;
     }
 
     .btn-pink {
