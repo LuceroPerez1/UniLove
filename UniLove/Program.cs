@@ -7,6 +7,14 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
+        // Agregar soporte para sesiones
+        builder.Services.AddSession(options =>
+        {
+            options.IdleTimeout = TimeSpan.FromMinutes(30); // Tiempo de expiración de la sesión
+            options.Cookie.IsEssential = true; // Hacer la cookie esencial
+        });
+
+        // Configuración del DbContext
         builder.Services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -27,8 +35,10 @@ public class Program
         app.UseHttpsRedirection();
         app.UseStaticFiles();
 
-        app.UseRouting();
+        // Usar sesiones
+        app.UseSession();
 
+        app.UseRouting();
         app.UseAuthorization();
 
         app.MapRazorPages();
@@ -36,5 +46,4 @@ public class Program
         app.Run();
     }
 }
-
 
