@@ -35,6 +35,7 @@ namespace UniLove.Pages
 
             if (usuario != null)
             {
+                HttpContext.Session.SetString("modoJuego", usuario.ModoJuego);
                 // Autenticación exitosa
                 return RedirectToPage("/Navegacion"); // Redirige a la página de navegación
             }

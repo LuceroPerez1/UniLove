@@ -1,7 +1,10 @@
 ﻿@page
 @model UniLove.Pages.NavegacionModel
 @{
+    var modoJuego = Model.ModoJuego;
+    var usuarioModoJuego = Model.UsuarioModoJuego;
 }
+
 <div class="custom-container vh-100 d-flex flex-column justify-content-center align-items-center bg-light">
     <!-- Encabezado con iconos -->
     <div class="w-100 d-flex justify-content-between align-items-start p-3">
@@ -32,6 +35,10 @@
     <!-- Imagen del perfil en el centro (más grande) -->
     <div class="profile-image text-center mb-4">
         <img src="https://cdn.pixabay.com/photo/2018/11/13/21/43/avatar-3814049_1280.png" alt="Foto de perfil" class="img-fluid rounded" style="max-width: 60%; height: auto; border-radius: 10px;">
+    </div>
+
+    <div>
+        <p>Usuario con el mismo modo de juego: @usuarioModoJuego</p> 
     </div>
 
     <!-- Botones de acción debajo de la imagen (más separados) -->
