@@ -2,17 +2,17 @@
 @model UniLove.Pages.NavegacionModel
 @{
     var modoJuego = Model.ModoJuego;
-    var usuarioModoJuego = Model.Usuarios?.NombreUsuario;
+    var usuarioModoJuego = Model.UsuarioModoJuego?.NombreUsuario;
 }
 
 <div class="custom-container vh-100 d-flex flex-column justify-content-center align-items-center bg-light">
     <!-- Encabezado con iconos -->
     <div class="w-100 d-flex justify-content-between align-items-start p-3 mt-2">
-        <!-- Icono de perfil del usuario en la esquina superior izquierda -->
+        <!-- Icono de mensajes en la esquina superior izquierda -->
         <div>
-            <a href="/Perfil" title="Mi Cuenta">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="width: 60px; height: 60px; color: #FF007F;">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+            <a href="/Index" title="Volver a página principal">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 45px; height: 45px; color: #FF007F;">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
                 </svg>
             </a>
         </div>
@@ -22,11 +22,11 @@
             <h1 class="logo mb-0">Uni<span>Love</span></h1>
         </div>
 
-        <!-- Icono de mensajes en la esquina superior derecha -->
+        <!-- Icono de perfil del usuario en la esquina superior derecha -->
         <div>
-            <a href="/Mensajes" title="Mensajes">
+            <a href="/Perfil" title="Mi Cuenta">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" style="width: 60px; height: 60px; color: #FF007F;">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                 </svg>
             </a>
         </div>
@@ -34,18 +34,33 @@
 
     <!-- Imagen del perfil en el centro (más grande) -->
     <div id="profileImageDiv" class="profile-image text-center mb-4">
-        <img src="https://cdn.pixabay.com/photo/2018/11/13/21/43/avatar-3814049_1280.png" alt="Foto de perfil" class="img-fluid rounded" style="max-width: 60%; height: auto; border-radius: 10px;">
+        <img src="https://cdn.pixabay.com/photo/2018/11/13/21/43/avatar-3814049_1280.png" alt="Foto de perfil" class="img-fluid rounded" style="max-width: 50%; height: auto; border-radius: 10px;">
     </div>
 
-    <!-- Datos del usuario -->
-    <div id="userDetailsDiv" class="user-details text-center mb-4" style="display: none;">
-        <p><strong>Nombre de Usuario:</strong> @usuarioModoJuego</p>
-        <p><strong>Correo Electrónico:</strong> @Model.Usuarios?.CorreoElectronico</p>
-        <p><strong>Fecha de Nacimiento:</strong> @Model.Usuarios?.FechaNacimiento.ToString("dd/MM/yyyy")</p>
-        <p><strong>Género:</strong> @Model.Usuarios?.Genero</p>
-        <p><strong>Orientación Sexual:</strong> @Model.Usuarios?.OrientacionSexual</p>
-        <p><strong>Facultad:</strong> @Model.Usuarios?.Facultad</p>
-    </div>
+    <!-- Datos del usuario con los atributos data-* -->
+    @if (Model.UsuarioModoJuego != null)
+    {
+        <div id="userDetailsDiv" class="user-details text-center mb-4" style="display: none;"
+             data-nombre-usuario="@usuarioModoJuego"
+             data-correo-usuario="@Model.UsuarioModoJuego.CorreoElectronico"
+             data-fecha-nacimiento="@Model.UsuarioModoJuego.FechaNacimiento.ToString("dd/MM/yyyy")"
+             data-genero="@Model.UsuarioModoJuego.Genero"
+             data-orientacion-sexual="@Model.UsuarioModoJuego.OrientacionSexual"
+             data-facultad="@Model.UsuarioModoJuego.Facultad">
+            <p><strong>Nombre de Usuario:</strong> @usuarioModoJuego</p>
+            <p><strong>Correo Electrónico:</strong> @Model.UsuarioModoJuego.CorreoElectronico</p>
+            <p><strong>Fecha de Nacimiento:</strong> @Model.UsuarioModoJuego.FechaNacimiento.ToString("dd/MM/yyyy")</p>
+            <p><strong>Género:</strong> @Model.UsuarioModoJuego.Genero</p>
+            <p><strong>Orientación Sexual:</strong> @Model.UsuarioModoJuego.OrientacionSexual</p>
+            <p><strong>Facultad:</strong> @Model.UsuarioModoJuego.Facultad</p>
+        </div>
+    }
+    else
+    {
+        <div id="userDetailsDiv" class="user-details text-center mb-4">
+            <p>No se ha encontrado información del usuario.</p>
+        </div>
+    }
 
     <!-- Nombre del usuario con ícono a la derecha -->
     <div class="usuario d-flex align-items-center" style="display: flex; align-items: center;">
@@ -54,16 +69,25 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
             </svg>
-
         </button>
     </div>
 
-
     <!-- Botones de acción debajo de la imagen (más separados) -->
-    <div class="actions text-center mt-3 mb-5">
-        <button class="btn btn-pink mx-2" style="width: 160px; height: 50px; font-size: 1.5rem;">Siguiente</button>
-    </div>
+    <form method="post" asp-page-handler="SiguienteUsuario">
+        <div class="actions text-center mt-3 mb-5">
+            <button type="submit" class="btn btn-pink mx-2" style="width: 160px; height: 50px; font-size: 1.5rem;">Siguiente</button>
+        </div>
+    </form>
+
+    @if (Model.UsuarioModoJuego == null)
+    {
+        <div class="alert alert-warning text-center mt-4" role="alert">
+            ¡Ya no hay más usuarios disponibles en este modo de juego!
+        </div>
+    }
 </div>
+
+
 <script>
     document.getElementById("infoButton").addEventListener("click", function () {
         // Obtener los elementos de la imagen de perfil y los detalles del usuario
@@ -81,12 +105,49 @@
             userDetailsDiv.style.display = "block";
         }
     });
+
+    // Función para actualizar los detalles del usuario cuando se hace clic en "Siguiente"
+    function updateUserDetails() {
+        // Obtener los datos del usuario desde los atributos data- del div
+        var userDetailsDiv = document.getElementById("userDetailsDiv");
+
+        var nombreUsuario = userDetailsDiv.getAttribute("data-nombre-usuario");
+        var correoUsuario = userDetailsDiv.getAttribute("data-correo-usuario");
+        var fechaNacimiento = userDetailsDiv.getAttribute("data-fecha-nacimiento");
+        var genero = userDetailsDiv.getAttribute("data-genero");
+        var orientacionSexual = userDetailsDiv.getAttribute("data-orientacion-sexual");
+        var facultad = userDetailsDiv.getAttribute("data-facultad");
+
+        // Aquí podrías realizar cualquier acción adicional que desees con estos datos.
+        console.log("Nombre de Usuario:", nombreUsuario);
+        console.log("Correo Electrónico:", correoUsuario);
+        console.log("Fecha de Nacimiento:", fechaNacimiento);
+        console.log("Género:", genero);
+        console.log("Orientación Sexual:", orientacionSexual);
+        console.log("Facultad:", facultad);
+    }
+
+    // Llamar a la función updateUserDetails cuando se haga clic en el botón "Siguiente"
+    document.querySelector("form").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevenir el envío del formulario para poder ejecutar la lógica
+        updateUserDetails(); // Actualizar los detalles del usuario
+        this.submit(); // Luego permitir que se envíe el formulario
+    });
 </script>
+
+
+
+
 
 
 
 <!-- Estilos personalizados -->
 <style>
+    /* Añadir clase para ocultar elementos */
+    .hidden {
+        display: none;
+    }
+
     body {
         margin: 0;
         background-color: #FF007F;
@@ -128,9 +189,9 @@
         color: #FF007F;
     }
 
-    .logo span {
-        color: darkgray;
-    }
+        .logo span {
+            color: darkgray;
+        }
 
     .user-details {
         max-width: 600px;
@@ -139,7 +200,6 @@
         background-color: #f8f9fa;
         border-radius: 8px;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    
     }
 </style>
 
