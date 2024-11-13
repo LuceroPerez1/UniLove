@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using UniLove.Models;
 using Microsoft.AspNetCore.Http;
@@ -9,35 +10,90 @@ namespace UniLove.Pages
     {
         private readonly ApplicationDbContext _context;
 
-        // Propiedad para almacenar los datos completos del usuario
-        public Usuarios Usuario { get; set; }
+        // Propiedad para almacenar los datos del usuario
+        [BindProperty]
+        public Usuarios Usuarios { get; set; }
 
         public PerfilModel(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        public async Task OnGetAsync()
+        public async Task<IActionResult> OnGetAsync()
         {
-            // Obtener el IdUsuario desde la sesión
             int? idUsuario = HttpContext.Session.GetInt32("IdUsuario");
-
-            // Si no hay IdUsuario en la sesión, redirige a la página de inicio de sesión
             if (idUsuario == null)
             {
-                RedirectToPage("/Index");
-                return;
+                return RedirectToPage("/Index");
             }
 
-            // Buscar al usuario en la base de datos utilizando su IdUsuario
-            Usuario = await _context.Usuarios.FindAsync(idUsuario);
-
-            // Si el usuario no existe en la base de datos (caso improbable)
-            if (Usuario == null)
+            Usuarios = await _context.Usuarios.FindAsync(idUsuario);
+            if (Usuarios == null)
             {
-                RedirectToPage("/Index");
+                return RedirectToPage("/Index");
             }
+
+            return Page();
         }
+
+        public async Task<IActionResult> OnPostAsync()
+        {
+            // Obtener el IdUsuario de la sesión
+            int? idUsuario = HttpContext.Session.GetInt32("IdUsuario");
+            if (idUsuario == null)
+            {
+                return RedirectToPage("/Index");
+            }
+
+            // Buscar el usuario en la base de datos
+            var usuarioEnDb = await _context.Usuarios.FindAsync(idUsuario);
+            if (usuarioEnDb == null)
+            {
+                return RedirectToPage("/Index");
+            }
+
+            // Actualizar los campos editables
+            usuarioEnDb.NombreUsuario = Usuarios.NombreUsuario;
+            usuarioEnDb.CorreoElectronico = Usuarios.CorreoElectronico;
+            usuarioEnDb.Contraseña = Usuarios.Contraseña;
+
+            // Guardar cambios en la base de datos
+            await _context.SaveChangesAsync();
+
+            // Redirigir a la misma página para mostrar los datos actualizados
+            return RedirectToPage();
+        }
+
+        public async Task<IActionResult> OnPostDeleteAsync()
+        {
+            // Obtener el IdUsuario de la sesión
+            int? idUsuario = HttpContext.Session.GetInt32("IdUsuario");
+            if (idUsuario == null)
+            {
+                return RedirectToPage("/Index");
+            }
+
+            // Buscar el usuario en la base de datos
+            var usuarioEnDb = await _context.Usuarios.FindAsync(idUsuario);
+            if (usuarioEnDb == null)
+            {
+                return RedirectToPage("/Index");
+            }
+
+            // Eliminar el usuario de la base de datos
+            _context.Usuarios.Remove(usuarioEnDb);
+
+            // Guardar cambios en la base de datos
+            await _context.SaveChangesAsync();
+
+            // Eliminar el IdUsuario de la sesión
+            HttpContext.Session.Remove("IdUsuario");
+
+            // Redirigir a la página de inicio después de eliminar la cuenta
+            return RedirectToPage("/Index");
+        }
+
     }
 }
+
 
